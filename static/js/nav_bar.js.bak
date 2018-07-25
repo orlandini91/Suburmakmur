@@ -1,0 +1,51 @@
+function switchClass(html_class, has_class, gets_class) {
+  has_class.classList.remove(html_class);
+  gets_class.classList.add(html_class);
+}
+
+function toggleNav(nav_element, class_name, expand, compress) {
+  let nav_element_button   = nav_element.childNodes[1];
+  let nav_element_content  = nav_element.childNodes[2];
+
+  let nav_element_content_classNames  = nav_element_content.className.split(" ");
+  if (nav_element_content_classNames.includes(class_name)) {
+    nav_element_content.classList.remove(class_name);
+    nav_element_button.innerHTML = compress;
+  } 
+  else {
+    nav_element_content.classList.add(class_name);
+    nav_element_button.innerHTML = expand;
+  }
+}
+
+function toggleDisplayNavButton(e, class_name, expand_icon) {
+  if (e.matches) {
+    switchClass(class_name, nav_menu_button, nav_menu_content);
+    nav_menu_button.innerHTML = expand_icon;
+  }
+  else {
+    switchClass(class_name, nav_menu_content, nav_menu_button);
+  }
+}
+
+let nav_menu         = document.getElementById('nav_menu');
+let nav_menu_content = document.getElementById('nav_menu_content');
+
+let nav_menu_button        = document.createElement('div');
+nav_menu_button.id         = 'nav_menu_button';
+nav_menu_button.innerText  = '+';
+nav_menu_button.className  = 'hidden';
+
+nav_menu.insertBefore(nav_menu_button, nav_menu_content);
+nav_menu_button.addEventListener('click', function() {
+  toggleNav(nav_menu, 'hidden', '+', '-')
+}, false);
+
+if (document.documentElement.clientWidth < 900) {
+  switchClass('hidden', nav_menu_button, nav_menu_content);
+};
+
+let max_width_899px = window.matchMedia('(max-width: 899px)');
+max_width_899px.addListener(function(e) {
+  toggleDisplayNavButton(e, 'hidden', '+')
+});

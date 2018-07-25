@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="description" content="Wild river fish from the tropical rivers of South America, hot smoked the traditional way.">
+    <title>Smoked fish - Suburmakmur</title>
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Oswald:700|Quattrocento:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo:500|Source+Sans+Pro" rel="stylesheet">  
+    <link rel="icon" type="img/png" sizes="32x32" href="/img/favicon-32x32.png">
+  </head>
+  <body>
+    <div id="nav">
+      <div id="nav_restrict" class="center_85">
+        <div id="nav_bar">
+          <div id="nav_home">
+            <a href="#nav_home">Suburmakmur</a>
+          </div>
+        </div>
+        <div id="nav_menu">
+          <ul id="nav_menu_content">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="banner" class="table_display">
+      <div class="tablecell_middle">
+        <picture>
+          <source srcset="./img/Suburmakmur_Logo.svg" type="image/svg+xml">
+          <source srcset="./img/Suburmakmur_Logo.png" type="image/png">
+          <img src="./img/Suburmakmur_Logo.png" alt="Logo of the company">
+        </picture>
+      </div>
+    </div>
+    </div>
+    <div id="intro">
+      <div class="center_75 width_blog">
+        <h1>Smoked River Fish From South America</h1>
+        <p>{{partial "home/intro/intro_01.md" .}}</p>
+        <h2>Wild River Fish</h2>
+        <p>{{partial "home/intro/intro_02.md" .}}</p>
+        <h2>Traditional Hot Smoked Fish</h2>
+        <p>{{partial "home/intro/intro_03.md" .}}</p>
+      </div>
+    </div>
+    <div id ="process">
+      <div class="center_75 width_blog">
+        <div class="snippet">
+          <div>
+            <h3>Proper handeling</h3>
+            <p>{{partial "home/text/lorem.md" .}}</p>
+          </div>
+          <picture>
+            <source srcset="./img/fish_caugth.webp" type="image/webp">
+            <source srcset="./img/fish_caugth.jpeg" type="image/jpeg">
+            <img src="./img/fish_caugth.jpeg" alt="A pile of fish caught">
+          </picture>
+        </div>
+        <div class="snippet">
+          <div>
+            <h3>Proper gutting</h3>
+            <p>{{partial "home/text/lorem.md" .}}</p>
+          </div>
+          <picture>
+            <source srcset="./img/fish_gutted.webp" type="image/webp">
+            <source srcset="./img/fish_gutted.jpeg" type="image/jpeg">
+            <img src="./img/fish_gutted.jpeg" alt="Fish being cleaned and gutted">
+          </picture>
+        </div>
+        <div class="snippet">
+          <div>
+            <h3>Metal oven</h3>
+            <p>{{partial "home/text/lorem.md" .}}</p>
+          </div>
+          <picture>
+            <source srcset="./img/fish_oven.webp" type="image/webp">
+            <source srcset="./img/fish_oven.jpeg" type="image/jpeg">
+            <img src="./img/fish_oven.jpeg" alt="Metal oven with fish being smoked">
+          </picture>
+        </div>
+        <div class="snippet">
+          <div>
+            <h3>Finished product</h3>
+            <p>{{partial "home/text/lorem.md" .}}</p>
+          </div>
+          <picture>
+            <source srcset="./img/fish_smoked.webp" type="image/webp">
+            <source srcset="./img/fish_smoked.jpeg" type="image/jpeg">
+            <img src="./img/fish_smoked.jpeg" alt="Fish smoked to golden brwon color">
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div id="products">
+      <div class="center_75 width_blog">
+        <h2>Our Products</h2>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="contact">
+        <div class="center_75 width_blog">
+          <div class="center pb60 width_box">
+            <h4 class=>Try our fish!</h4>
+            <p>Does smoked fish sound like a good idea in the fish market?</p>
+            <p>Or are you looking for a new source of smoked fish?</p>
+            <p>Perhaps you'd like to try something new, like new recipes?</p>
+            <p>If the answer is yes, then we'd love to hear from you! Just fill in the form below and we'll reply as quickly as we can.</p>
+          </div>
+          <form class="center width_box" method="POST" action="https://formspree.io/YOUREMAILHERE">
+            <div class="form_box"><input name="email" placeholder="Your email" type="email"></div>
+            <div class="form_box"><input name="name" placeholder="Your name" type="text"></div>
+            <div class="form_box"><textarea name="message" placeholder="Your message"></textarea></div>
+            <button class="form_button" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div id="about" class="center_75 width_blog">
+        <h4>About us</h4>
+        <p>{{partial "home/footer/about.md" .}}</p>
+      </div>
+      <div id="info" class="center_75 width_blog">
+        <p class="center_txt">&#169; Copyright 2018 · Suburmakmur · Suburmarkmur Nederland B.V.</p>
+      </div>
+    </div>
+
+    <script type='text/javascript' src='./js/modernizr-custom.js' charset='utf-8'></script>
+    <script type='text/javascript' src='./js/nav_bar.js' charset='utf-8'></script>
+    <script>
+      if (Modernizr.classlist &&
+          Modernizr.eventlistener &&
+          Modernizr.matchmedia) 
+      {
+        navBarButton();
+        console.log('navigation bar enabled');
+      }
+      else {
+        console.log('Browser not supported :(');
+      }
+    </script>
+  </body>
+</html>
